@@ -73,5 +73,9 @@ int main() {
     postorderTraversal(root);
     cout << endl;
 
+    cout << "Levelorder Traversal: ";
+    levelorderTraversal(root);
+    cout << endl;
+
     return 0;
 }
