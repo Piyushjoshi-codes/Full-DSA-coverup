@@ -54,7 +54,7 @@ int main() {
         }
     }
     break;
-    case 3:
+    case 3: "Multiplication : \n";
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             arr3[i][j] = 0;
