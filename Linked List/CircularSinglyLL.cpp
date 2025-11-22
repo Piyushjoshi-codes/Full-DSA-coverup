@@ -22,49 +22,71 @@ class SinglyLinkedList{
     void push_front(int val) {
         Node* newNode = new Node(val);
         if(head == NULL) {
-            head = newNode;
-            tail = newNode;
+            head = tail = newNode;
+            tail->next = head;
         } else {
             newNode->next = head;
             head = newNode;
+            tail-> next = head;
         }
     }
 
     void push_back(int val){
         Node* newNode = new Node(val);
         if(head == NULL){
-            head = newNode;
-            tail = newNode;
+            head = tail = newNode;
+            tail->next = head;
         } else {
+            newNode->next = head;
             tail->next = newNode;
             tail = newNode;
+
         }
     }
     void pop_front() {
         if(head == NULL) {
-            cout << "Singly-Linked List is Empty.\n";
+            cout << " Circular Singly-Linked List is Empty.\n";
             return;
         }
-        Node* temp = head;
-        head = head->next;
-        temp->next = NULL;
-        delete temp;
+        else if(head == tail) {
+            delete head;
+            head = tail = NULL;
+        } else {
+            Node* temp = head;
+            head = head->next;
+            tail->next = head;
+            temp->next = NULL;
+            delete temp;
+        }
     }
     void pop_back() {
         if(head == NULL) {
-            cout << "Singly-Linked List is Empty.\n";
+            cout << "Circular Singly-Linked List is Empty.\n";
             return;
+        } else if(head == tail ) {
+            delete head;
+            head = tail = NULL;
+        } else {
+            Node* temp = tail;
+            Node* prev = head;
+            while(prev->next != tail) {
+                prev = prev->next;
+            }
+            tail = prev;
+            tail->next = head;
+            temp->next = NULL;
+            delete temp;
         }
-        Node* temp = tail;
-
     }
     void print(){
-        Node* temp = head;
-        while(temp != NULL){
+        if(head == NULL) return;
+        cout << head->data << " -> ";
+        Node* temp = head->next;
+        while(temp != head) {
             cout << temp->data << " -> ";
             temp = temp->next;
         }
-        cout << "NULL" << endl;
+        cout << head->data << endl;
     }
 
 };

@@ -1,0 +1,98 @@
+#include<iostream>
+using namespace std;
+struct Node {
+    int data;
+    Node* next;
+    Node* prev;
+    Node(int val) {
+        data = val;
+        next = prev = NULL;
+    }
+};
+struct DoublyLinkedList {
+    Node* head;
+    Node* tail;
+    DoublyLinkedList() {
+        head = tail = NULL;
+    }
+    void push_front(int val) {
+        Node* newNode = new Node(val);
+        if(head == NULL) {
+            head = tail = newNode;
+            head->next = head;
+            head->prev = head;
+
+        } else {
+            newNode->next = head;
+            newNode->prev = tail;
+            head->prev = newNode;
+            tail->next = newNode;
+            head = newNode;
+        }
+    }
+    void push_back(int val) {
+        Node* newNode = new Node(val);
+        if(head == NULL) {
+            head = tail = newNode;
+            head->next = head;
+            head->prev = head;
+        } else {
+            newNode->next = head;
+            newNode-> prev = tail;
+            tail->next = newNode;
+            head->prev = newNode;
+            tail = newNode;
+        }
+    }
+    void pop_front() {
+        if(head == NULL) return;
+        else if(head == tail) {
+            delete head;
+            head = tail = NULL;
+            return;
+        }
+        Node* temp = head;
+        head = head->next;
+        head->prev = tail;
+        tail->next = head;
+        delete temp;
+    }
+    void pop_back() {
+        if(head == NULL) return;
+        else if(head == tail) {
+            delete head;
+            head = tail = NULL;
+            return;
+        }
+        Node* temp = tail;
+        tail = tail->prev;
+        tail->next = head;
+        head->prev = tail;
+        delete temp;
+    }
+    void print() {
+        if(head == NULL) {
+            cout << "Circular Singly-Linked List is Empty!";
+        }        
+        Node* temp = head;
+        do {
+            cout << temp->data << " <=> ";
+            temp = temp->next;
+        } while (temp != head);
+        cout << head->data << endl;
+    }
+};
+int main() {
+    DoublyLinkedList DLL;
+    DLL.push_front(30);
+    DLL.push_front(20);
+    DLL.push_front(10);
+    DLL.push_back(40);
+    DLL.push_back(50);
+    cout << "List :" << endl;
+    DLL.print();
+    DLL.pop_front();
+    DLL.pop_back();
+    cout << "Final List :" << endl;
+    DLL.print();
+}
