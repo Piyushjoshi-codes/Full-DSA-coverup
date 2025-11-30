@@ -9,11 +9,12 @@ int main() {
     SLL.push_back(4);
     SLL.push_back(5);
     cout << "List: ";
-    for(int x : SLL) cout << x << " ";
-    cout << endl;
+    for(int x : SLL) cout << x << " -> ";
+    cout << "The Linked List is Empty!" << endl;
     SLL.pop_front();
     SLL.pop_back();
     cout << "Final List: ";
-    for(int x : SLL) cout << x << " ";
+    for(int x : SLL) cout << x << " -> ";
+    cout << "The Linked List is Empty!" << endl;
     return 0;
 }

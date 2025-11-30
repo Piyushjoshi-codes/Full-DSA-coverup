@@ -5,15 +5,15 @@ class Node{
     int data;
     Node* next;
 
-    Node(int val){
+    Node(int val) {
         data = val;
         next = NULL;
     }
 };
-class SinglyLinkedList{
+class SinglyLinkedList {
     Node* head;
     Node* tail;
-
+    
     public:
     SinglyLinkedList() {
         head = NULL;
@@ -29,8 +29,7 @@ class SinglyLinkedList{
             head = newNode;
         }
     }
-
-    void push_back(int val){
+    void push_back(int val) {
         Node* newNode = new Node(val);
         if(head == NULL){
             head = newNode;
@@ -41,24 +40,32 @@ class SinglyLinkedList{
         }
     }
     void pop_front() {
-        if(head == NULL) {
-            cout << "Singly-Linked List is Empty.\n";
-            return;
-        }
+        if(head == NULL) return;
         Node* temp = head;
         head = head->next;
         temp->next = NULL;
         delete temp;
     }
     void pop_back() {
-        if(head == NULL) {
-            cout << "Singly-Linked List is Empty.\n";
+        if(head == NULL) return;
+        if(head->next == NULL) {
+            delete head;
+            head = tail = NULL;
             return;
         }
-        Node* temp = tail;
-
+        Node* temp = head;
+        while(temp->next != tail) {
+            temp = temp->next;
+        }
+        temp->next = NULL;
+        delete tail;
+        tail = temp;
     }
-    void print(){
+    void print() {
+        if(head == NULL) {
+            cout << "Singly Linked List is Empty!" << endl;
+            return;
+        }
         Node* temp = head;
         while(temp != NULL){
             cout << temp->data << " -> ";
@@ -66,7 +73,6 @@ class SinglyLinkedList{
         }
         cout << "NULL" << endl;
     }
-
 };
 int main() {
     SinglyLinkedList SLL;
@@ -81,5 +87,4 @@ int main() {
     SLL.pop_back();
     cout << "Final List: \n";
     SLL.print();
-
 }

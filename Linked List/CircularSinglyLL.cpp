@@ -44,10 +44,7 @@ class SinglyLinkedList{
         }
     }
     void pop_front() {
-        if(head == NULL) {
-            cout << " Circular Singly-Linked List is Empty.\n";
-            return;
-        }
+        if(head == NULL) return;
         else if(head == tail) {
             delete head;
             head = tail = NULL;
@@ -60,10 +57,8 @@ class SinglyLinkedList{
         }
     }
     void pop_back() {
-        if(head == NULL) {
-            cout << "Circular Singly-Linked List is Empty.\n";
-            return;
-        } else if(head == tail ) {
+        if(head == NULL) return;
+        else if(head == tail ) {
             delete head;
             head = tail = NULL;
         } else {
@@ -78,8 +73,11 @@ class SinglyLinkedList{
             delete temp;
         }
     }
-    void print(){
-        if(head == NULL) return;
+    void print() {
+        if(head == NULL) {
+        cout << "Circular Singly Linked List is Empty!\n";
+        return;
+        }
         cout << head->data << " -> ";
         Node* temp = head->next;
         while(temp != head) {
@@ -103,5 +101,4 @@ int main() {
     SLL.pop_back();
     cout << "Final List: \n";
     SLL.print();
-
 }

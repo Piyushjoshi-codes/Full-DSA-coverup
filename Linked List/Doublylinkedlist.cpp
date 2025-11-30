@@ -37,10 +37,7 @@ struct DoublyLinkedList {
     }
     void pop_front() {
         Node* temp = head;
-        if(head == NULL) {
-            cout << "Doubly-Linked List is empty!";
-            return;
-        }
+        if(head == NULL) return;
         head = head-> next;
         if(head != NULL) {
             head->prev = NULL;
@@ -49,8 +46,10 @@ struct DoublyLinkedList {
         delete temp;
     }
     void pop_back() {
-        if(head == NULL) {
-            cout << "Doubly-Linked List is Empty!";
+        if(head == NULL) return;
+        if(head->next == NULL) {
+            delete head;
+            head = tail = NULL;
             return;
         }
         Node* temp = tail;
@@ -62,6 +61,10 @@ struct DoublyLinkedList {
         delete temp;
     }
     void print() { 
+        if(head == NULL) {
+            cout << "Doubly Linked List is Empty!" << endl;
+            return;
+        }
         Node* temp = head;
         while(temp != NULL) {
             cout << temp->data << " <=>" << " ";

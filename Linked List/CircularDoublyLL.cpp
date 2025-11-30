@@ -72,7 +72,7 @@ struct DoublyLinkedList {
     }
     void print() {
         if(head == NULL) {
-            cout << "Circular Singly-Linked List is Empty!";
+            cout << "Circular Doubly Linked List is Empty!";
         }        
         Node* temp = head;
         do {
