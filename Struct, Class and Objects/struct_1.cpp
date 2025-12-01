@@ -24,4 +24,5 @@ int main() {
     cout << "Name of the Author : " << B.author<< endl;
     cout << "Price of the Book : $" << B.price << endl;
     cout << "Date of Publication : " << B.publ_date.day << " " << B.publ_date.month << " " << B.publ_date.year << " " << endl;
+    return 0;
 }
