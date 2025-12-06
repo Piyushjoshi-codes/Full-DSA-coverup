@@ -9,10 +9,10 @@ struct Node {
         next = prev = NULL;
     }
 };
-struct DoublyLinkedList {
+struct CircularDoublyLinkedList {
     Node* head;
     Node* tail;
-    DoublyLinkedList() {
+    CircularDoublyLinkedList() {
         head = tail = NULL;
     }
     void push_front(int val) {
@@ -83,16 +83,16 @@ struct DoublyLinkedList {
     }
 };
 int main() {
-    DoublyLinkedList DLL;
-    DLL.push_front(30);
-    DLL.push_front(20);
-    DLL.push_front(10);
-    DLL.push_back(40);
-    DLL.push_back(50);
+    CircularDoublyLinkedList CDLL;
+    CDLL.push_front(30);
+    CDLL.push_front(20);
+    CDLL.push_front(10);
+    CDLL.push_back(40);
+    CDLL.push_back(50);
     cout << "List :" << endl;
-    DLL.print();
-    DLL.pop_front();
-    DLL.pop_back();
+    CDLL.print();
+    CDLL.pop_front();
+    CDLL.pop_back();
     cout << "Final List :" << endl;
-    DLL.print();
+    CDLL.print();
 }
