@@ -10,12 +10,12 @@ class Node{
         next = NULL;
     }
 };
-class SinglyLinkedList{
+class CircularSinglyLinkedList{
     Node* head;
     Node* tail;
 
     public:
-    SinglyLinkedList() {
+    CircularSinglyLinkedList() {
         head = NULL;
         tail = NULL;
     }
@@ -89,16 +89,16 @@ class SinglyLinkedList{
 
 };
 int main() {
-    SinglyLinkedList SLL;
-    SLL.push_front(3);
-    SLL.push_front(2);
-    SLL.push_front(1);
-    SLL.push_back(4);
-    SLL.push_back(5);
+    CircularSinglyLinkedList CSLL;
+    CSLL.push_front(3);
+    CSLL.push_front(2);
+    CSLL.push_front(1);
+    CSLL.push_back(4);
+    CSLL.push_back(5);
     cout << "List: \n";
-    SLL.print();
-    SLL.pop_front();
-    SLL.pop_back();
+    CSLL.print();
+    CSLL.pop_front();
+    CSLL.pop_back();
     cout << "Final List: \n";
-    SLL.print();
+    CSLL.print();
 }
