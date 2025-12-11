@@ -41,6 +41,10 @@ class SinglyLinkedList {
     }
     void pop_front() {
         if(head == NULL) return;
+        if(head->next == NULL) {
+            delete head;
+            head = tail = NULL;
+        }
         Node* temp = head;
         head = head->next;
         temp->next = NULL;

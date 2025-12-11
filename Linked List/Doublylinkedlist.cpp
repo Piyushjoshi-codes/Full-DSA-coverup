@@ -39,6 +39,11 @@ struct DoublyLinkedList {
         Node* temp = head;
         if(head == NULL) return;
         head = head-> next;
+        if(head->next == NULL) {
+            delete head;
+            head = tail = NULL;
+            return;
+        }
         if(head != NULL) {
             head->prev = NULL;
         }

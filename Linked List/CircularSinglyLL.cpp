@@ -45,7 +45,7 @@ class CircularSinglyLinkedList{
     }
     void pop_front() {
         if(head == NULL) return;
-        else if(head == tail) {
+        else if(head->next = NULL) {
             delete head;
             head = tail = NULL;
         } else {
