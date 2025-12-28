@@ -10,7 +10,7 @@ private:
     string result;
 
 public:
-    Student(string n, T m, float c) {
+    Student(string n, T m, float c) {           
         name = n;
         totalMarks = m;
         cgpa = c;
