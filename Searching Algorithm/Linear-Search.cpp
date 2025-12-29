@@ -10,9 +10,9 @@ int linearSearch(int arr[], int n, int key) {
     return -1; // Return -1 if the key is not found
 }
 int main() {
-    int arr[] = {10, 20, 30, 40, 50};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int key = 30;
+    int arr[] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+    int n = 10;
+    int key = 50;
     cout << "List: ";
     for(int i = 0; i < n; i++) {
         cout << arr[i] << " ";
