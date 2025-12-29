@@ -22,6 +22,13 @@ int main() {
     int arr[] = {10, 20, 30, 40, 50};
     int n = sizeof(arr) / sizeof(arr[0]);
     int key = 30;
+    cout << "List: ";
+    for(int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+
+    cout << "\nKey selected: " << key << endl;
+
     int result = binarySearch(arr, n, key);
     if (result != -1) {
         cout << "Element found at index: " << result << endl;
