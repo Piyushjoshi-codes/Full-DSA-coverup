@@ -20,7 +20,7 @@ int binarySearch(int arr[], int n, int key) {
 
 int main() {
     int arr[] = {10, 20, 30, 40, 50};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int n = 5;
     int key = 30;
     cout << "List: ";
     for(int i = 0; i < n; i++) {
