@@ -113,7 +113,7 @@ int main() {
     P3 = P1.subtract(P2);
     cout << "Subtraction: ";
     P3.display();
-    P3 = P1.subtract(P2);
+    P3 = P1.multiply(P2);
     cout << "Multiplication: ";
     P3.display();
     return 0;
