@@ -44,7 +44,7 @@ class SinglyLinkedList {
         if(head->next == NULL) {
             delete head;
             head = tail = NULL;
-            return;
+            return; 
         }
         Node* temp = head;
         head = head->next;
