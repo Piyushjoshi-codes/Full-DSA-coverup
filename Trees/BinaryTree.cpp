@@ -11,7 +11,7 @@ struct Node {
         left = nullptr;
         right = nullptr;
     }
-};
+};  
 void preorderTraversal(Node* root) {
     if (root == nullptr) {
         return;
